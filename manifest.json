@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "contexts",
+	"name": "Contexts Plugin",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Manage and switch between different contexts in your vault to keep your notes organized and focused.",
+	"author": "Pau Garcia",
+	"authorUrl": "https://paugarcia32.dev",
 	"isDesktopOnly": false
 }
