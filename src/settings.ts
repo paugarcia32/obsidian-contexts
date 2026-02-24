@@ -1,36 +1,24 @@
-import {App, PluginSettingTab, Setting} from "obsidian";
-import MyPlugin from "./main";
+import { App, PluginSettingTab } from 'obsidian';
+import type ContextsPlugin from './main';
+import type { ContextsSettings } from './types';
 
-export interface MyPluginSettings {
-	mySetting: string;
-}
+export type { ContextsSettings };
+export type { Context, ContextFilter, ContextFilterType } from './types';
 
-export const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
-}
+export const DEFAULT_SETTINGS: ContextsSettings = {
+	contexts: [],
+};
 
-export class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+export class ContextsSettingTab extends PluginSettingTab {
+	plugin: ContextsPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: ContextsPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
 
 	display(): void {
-		const {containerEl} = this;
-
-		containerEl.empty();
-
-		new Setting(containerEl)
-			.setName('Settings #1')
-			.setDesc('It\'s a secret')
-			.addText(text => text
-				.setPlaceholder('Enter your secret')
-				.setValue(this.plugin.settings.mySetting)
-				.onChange(async (value) => {
-					this.plugin.settings.mySetting = value;
-					await this.plugin.saveSettings();
-				}));
+		this.containerEl.empty();
+		// Settings UI — to be implemented
 	}
 }
